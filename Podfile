@@ -7,6 +7,7 @@ target 'tw-test' do
 	pod 'SwiftyJSON'
     pod 'Alamofire'
     pod 'RealmSwift'
+    pod 'SDWebImage'
 
   target 'tw-testTests' do
     inherit! :search_paths

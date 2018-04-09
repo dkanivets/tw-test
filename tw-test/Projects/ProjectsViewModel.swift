@@ -7,7 +7,20 @@
 //
 
 import Foundation
+import RealmSwift
+import ReactiveSwift
 
-class ProjectsViewModel {
-    
+protocol ProjectsViewModelProtocol {
+    var updateItemsAction: Action<Void, [RLMProject], NSError> { get }
+    var items: [RLMProject] { get }
+}
+
+class ProjectsViewModel: ProjectsViewModelProtocol {
+    lazy var updateItemsAction = ProjectsService.pullProjectsAction
+    var items: [RLMProject] {
+        let realm = try! Realm()
+        let items = Array(realm.objects(RLMProject.self))
+        
+        return items
+    }
 }

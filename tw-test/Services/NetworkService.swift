@@ -18,12 +18,28 @@ enum NetworkService {
     
     case
     projectsList,
-    addTask(String)
+    taskLists(String),
+    addTask(String),
+    quickAdd(String),
+    tasks(String)
+    
     
     var path : (Alamofire.HTTPMethod, String) {
         switch self {
             case .projectsList:  return (.get,  "/projects.json")
-            case .addTask(let t):  return (.get,  "/tasklists/\(t)/tasks.json")
+            case .taskLists(let t): return (.get, "/projects/\(t)/tasklists.json")
+            case .addTask(let t):  return (.post,  "/tasklists/\(t)/tasks.json")
+            case .quickAdd(let t): return (.post, "/projects/\(t)/tasks/quickadd.json")
+            case .tasks(let t): return (.get, "/tasklists/\(t)/tasks.json")
+        }
+    }
+    
+    var encoding: ParameterEncoding {
+        switch self {
+        case .quickAdd(_):
+            return JSONEncoding.default
+        default:
+            return URLEncoding.default
         }
     }
     
@@ -34,7 +50,8 @@ enum NetworkService {
 //            finalParameters[""] = NetworkService.apiKey as AnyObject
             let (responseProducerSignal, observerResponse) = SignalProducer<(response: HTTPURLResponse, data: Data), NSError>.ProducedSignal.pipe()
             let responseProducer = SignalProducer(responseProducerSignal)
-            let alamofireRequest = Alamofire.request(NetworkService.baseURL + self.path.1, method: self.path.0, parameters: parameters)
+
+            let alamofireRequest = Alamofire.request(NetworkService.baseURL + self.path.1, method: self.path.0, parameters: parameters, encoding: self.encoding)
             
             
             alamofireRequest.authenticate(user: NetworkService.apiKey, password: "p").responseString { response in
