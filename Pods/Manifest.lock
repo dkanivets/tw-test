@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.1)
+  - ARSLineProgress (2.2.0)
   - ReactiveCocoa (7.2.0):
     - ReactiveSwift (~> 3.1)
   - ReactiveSwift (3.1.0):
@@ -17,6 +18,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - ARSLineProgress
   - ReactiveCocoa
   - RealmSwift
   - SDWebImage
@@ -25,6 +27,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - ARSLineProgress
     - ReactiveCocoa
     - ReactiveSwift
     - Realm
@@ -35,6 +38,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  ARSLineProgress: ec2160ed0530a6e3afe2981ad28837d10d650cd1
   ReactiveCocoa: 476dae7ca790f40d30d186a1bd7ebae4290395d5
   ReactiveSwift: 5b26d2e988fe0eed2daf48c4054d1de74db50184
   Realm: d927fbf66df5532cfafc08afb5f7e53ded37b894
@@ -43,6 +47,6 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 809e778cebcc32a6c4e72fb4a1cc551bcc84ddd1
+PODFILE CHECKSUM: ab9b3a25c53b06da508871a3f66ea3cfa83daf8c
 
 COCOAPODS: 1.5.0

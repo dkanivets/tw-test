@@ -8,6 +8,7 @@ target 'tw-test' do
     pod 'Alamofire'
     pod 'RealmSwift'
     pod 'SDWebImage'
+    pod 'ARSLineProgress'
 
   target 'tw-testTests' do
     inherit! :search_paths

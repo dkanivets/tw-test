@@ -20,3 +20,9 @@ extension Array {
         }
     }
 }
+
+// MARK: Dispatch time in seconds
+
+func dispatchAfter(seconds: Double, queue: DispatchQueue = DispatchQueue.main, block: @escaping ()->()) {
+    queue.asyncAfter(deadline: DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: block)
+}

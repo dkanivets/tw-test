@@ -9,6 +9,7 @@
 import UIKit
 import ReactiveCocoa
 import ReactiveSwift
+import ARSLineProgress
 
 class AddTasksViewController: UIViewController {
 
@@ -30,9 +31,7 @@ class AddTasksViewController: UIViewController {
         super.viewDidLoad()
 
         self.configureTableView()
-        let submitButton = UIBarButtonItem(title: "Submit", style: .done, target: self, action: #selector(addTasks))
-        navigationItem.rightBarButtonItem = submitButton
-        textField.delegate = self
+        self.updateUI()
         self.viewModel.items.signal.observeValues { [weak self] _ in
             self?.tableView.reloadData()
         }
@@ -40,13 +39,25 @@ class AddTasksViewController: UIViewController {
     }
     
     private func configureTableView() {
+        tableView.tableFooterView = UIView(frame: .zero)
         tableView.register(UINib(nibName: "TaskTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: TaskTableViewCell.identifier)
+    }
+    
+    private func updateUI() {
+        let submitButton = UIBarButtonItem(title: "Submit", style: .done, target: self, action: #selector(addTasks))
+        navigationItem.rightBarButtonItem = submitButton
+        textField.delegate = self
+        self.title = "Add tasks"
     }
 
     @objc func addTasks() {
-        viewModel.addTasksAction.apply((taskNames: viewModel.items.value.joined(separator: "\n"), taskListID: viewModel.taskList.id, projectID: viewModel.taskList.projectID)).on(failed: { error in
-            print(error)
-        }, completed: {
+        ARSLineProgress.show()
+        
+        viewModel.addTasksAction.apply((taskNames: viewModel.items.value.joined(separator: "\n"), taskListID: viewModel.taskList.id, projectID: viewModel.taskList.projectID)).on(
+        failed: { error in
+            ARSLineProgress.showFail()
+        },
+        completed: {
             self.navigationController?.popViewController(animated: true)
             print("Success")
         }).start()
@@ -63,6 +74,14 @@ extension AddTasksViewController: UITableViewDataSource, UITableViewDelegate {
         cell.nameLabel.text = viewModel.items.value[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        self.viewModel.items.value.remove(at: indexPath.row)
     }
 }
 

@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import SDWebImage
+import ARSLineProgress
 
 class ProjectsViewController: UIViewController {
 
@@ -29,12 +30,26 @@ class ProjectsViewController: UIViewController {
         super.viewDidLoad()
 
         self.configureTableView()
-        self.viewModel.updateItemsAction.apply().on(completed: { [weak self] in
-            self?.tableView.reloadData()
+        self.configureUI()
+        self.viewModel.updateItemsAction.apply().on(
+            starting: {
+                ARSLineProgress.show()
+        },
+            failed: { _ in
+                ARSLineProgress.showFail()
+        },
+            completed: { [weak self] in
+                ARSLineProgress.showSuccess()
+                self?.tableView.reloadData()
         }).start()
     }
-    
+
+    private func configureUI() {
+        self.title = "Projects"
+    }
+
     private func configureTableView() {
+        tableView.tableFooterView = UIView(frame: .zero)
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: MainTableViewCell.identifier)
     }
 
@@ -51,8 +66,12 @@ extension ProjectsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.descriptionLabel.text = viewModel.items[indexPath.row].projectDescr
         cell.idLabel.text = viewModel.items[indexPath.row].id
         cell.logo.sd_setImage(with: URL(string: viewModel.items[indexPath.row].logo), placeholderImage: UIImage(named: "placeholder.png"))
-
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

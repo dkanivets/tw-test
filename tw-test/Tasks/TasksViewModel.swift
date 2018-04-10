@@ -14,7 +14,7 @@ class TasksViewModel {
     let taskList: RLMTasksList
     var items: [RLMTask] {
         let realm = try! Realm()
-        let items = Array(realm.objects(RLMTask.self).filter("taskListID = %@", taskList.id))
+        let items = Array(realm.objects(RLMTask.self).filter("taskListID = %@", taskList.id).sorted(by: { $0.id > $1.id }))
         
         return items
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ARSLineProgress
 
 class TasksViewController: UIViewController {
 
@@ -27,11 +28,24 @@ class TasksViewController: UIViewController {
         super.viewDidLoad()
 
         self.configureTableView()
-        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddTasks))
-        navigationItem.rightBarButtonItem = add
-        self.viewModel.updateTasksAction.apply(self.viewModel.taskList.id).on(completed: { [weak self] in
-            self?.tableView.reloadData()
+        self.updateUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.viewModel.updateTasksAction.apply(self.viewModel.taskList.id).on(
+        starting: {
+                ARSLineProgress.show()
+        },
+            failed: { _ in
+                ARSLineProgress.showFail()
+        },
+            completed: { [weak self] in
+                ARSLineProgress.showSuccess()
+                self?.tableView.reloadData()
         }).start()
+        
     }
     
     @objc func showAddTasks() {
@@ -41,7 +55,14 @@ class TasksViewController: UIViewController {
     }
 
     private func configureTableView() {
+        tableView.tableFooterView = UIView(frame: .zero)
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: MainTableViewCell.identifier)
+    }
+    
+    private func updateUI() {
+        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddTasks))
+        navigationItem.rightBarButtonItem = add
+        self.title = viewModel.taskList.name        
     }
 }
 
@@ -57,6 +78,10 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
         cell.descriptionLabel.text = viewModel.items[indexPath.row].taskDescr
         cell.idLabel.text = viewModel.items[indexPath.row].id
         
+        if cell.logo.superview != nil && cell.stackView.arrangedSubviews.count > 1 {
+            cell.stackView.removeArrangedSubview(cell.logo.superview!)
+        }
+
         return cell
     }
     

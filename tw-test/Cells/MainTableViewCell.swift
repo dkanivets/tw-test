@@ -9,12 +9,11 @@
 import UIKit
 
 class MainTableViewCell: UITableViewCell {
-
     static let identifier = "mainCellIdentifier"
     
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var logo: UIImageView!
-    
 }
