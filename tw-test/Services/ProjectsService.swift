@@ -30,7 +30,7 @@ struct ProjectsService {
     }
 }
 
-private extension JSON {
+extension JSON {
     func projectToStorage() -> RLMProject? {
         let project = RLMProject()
         guard let id = self["id"].string,

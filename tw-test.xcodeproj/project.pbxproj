@@ -20,6 +20,7 @@
 		C7D2DEB0207BFABF004A39AA /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2DEAE207BFABF004A39AA /* TaskTableViewCell.swift */; };
 		C7D2DEB1207BFABF004A39AA /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D2DEAF207BFABF004A39AA /* TaskTableViewCell.xib */; };
 		C7D2DEB4207C19EC004A39AA /* AbstractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2DEB3207C19EC004A39AA /* AbstractViewModel.swift */; };
+		C7D2DEB6207D7321004A39AA /* project.json in Resources */ = {isa = PBXBuildFile; fileRef = C7D2DEB5207D7321004A39AA /* project.json */; };
 		C7DEEE1F2077F78C006283B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DEEE1E2077F78C006283B4 /* AppDelegate.swift */; };
 		C7DEEE262077F78E006283B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DEEE252077F78E006283B4 /* Assets.xcassets */; };
 		C7DEEE292077F78E006283B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DEEE272077F78E006283B4 /* LaunchScreen.storyboard */; };
@@ -68,6 +69,7 @@
 		C7D2DEAE207BFABF004A39AA /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		C7D2DEAF207BFABF004A39AA /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
 		C7D2DEB3207C19EC004A39AA /* AbstractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewModel.swift; sourceTree = "<group>"; };
+		C7D2DEB5207D7321004A39AA /* project.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = project.json; sourceTree = SOURCE_ROOT; };
 		C7DEEE1B2077F78C006283B4 /* tw-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tw-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DEEE1E2077F78C006283B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7DEEE252077F78E006283B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		C7DEEE1D2077F78C006283B4 /* tw-test */ = {
 			isa = PBXGroup;
 			children = (
+				C7D2DEB5207D7321004A39AA /* project.json */,
 				C7DEEE1E2077F78C006283B4 /* AppDelegate.swift */,
 				C7DEEE4A207AAA2A006283B4 /* SwiftExtensions.swift */,
 				C7D2DEB3207C19EC004A39AA /* AbstractViewModel.swift */,
@@ -334,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7D2DEB6207D7321004A39AA /* project.json in Resources */,
 				C7DEEE292077F78E006283B4 /* LaunchScreen.storyboard in Resources */,
 				C7D2DE9D207BD970004A39AA /* ProjectViewController.xib in Resources */,
 				C7DEEE412078C76D006283B4 /* ProjectsViewController.xib in Resources */,
@@ -606,7 +610,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KWNCHNHPA6;
 				INFOPLIST_FILE = "tw-test/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "teamwork.tw-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -622,7 +629,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KWNCHNHPA6;
 				INFOPLIST_FILE = "tw-test/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "teamwork.tw-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -639,7 +649,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KWNCHNHPA6;
 				INFOPLIST_FILE = "tw-testTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "teamwork.tw-testTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -657,7 +671,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KWNCHNHPA6;
 				INFOPLIST_FILE = "tw-testTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "teamwork.tw-testTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

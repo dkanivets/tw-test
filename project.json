@@ -1,0 +1,59 @@
+        {
+            "replyByEmailEnabled": true,
+            "starred": true,
+            "show-announcement": false,
+            "harvest-timers-enabled": false,
+            "status": "active",
+            "subStatus": "current",
+            "defaultPrivacy": "open",
+            "integrations": {
+                "xero": {
+                    "countrycode": "",
+                    "enabled": false,
+                    "connected": "NO",
+                    "organisation": "",
+                    "basecurrency": ""
+                },
+                "microsoftConnectors": {
+                    "enabled": false
+                },
+                "onedrivebusiness": {
+                    "enabled": false,
+                    "folder": "root",
+                    "account": "",
+                    "foldername": "root"
+                }
+            },
+            "created-on": "2016-08-20T19:16:13Z",
+            "category": {
+                "name": "Super Duper Category",
+                "id": "26881",
+                "color": ""
+            },
+            "filesAutoNewVersion": false,
+            "overview-start-page": "default",
+            "tags": [],
+            "logo": "https://s3.amazonaws.com/TWFiles/349705/projectLogo/tf_09C80679-C7D0-231B-91DC65CE6274CFDF.teamwork.png",
+            "startDate": "20160820",
+            "id": "301444",
+            "last-changed-on": "2018-04-10T20:48:09Z",
+            "endDate": "20200305",
+            "defaults": {
+                "privacy": ""
+            },
+            "company": {
+                "name": "Cat",
+                "is-owner": "1",
+                "id": "113332"
+            },
+            "tasks-start-page": "default",
+            "name": "Cool Project 5",
+            "privacyEnabled": false,
+            "description": "BLA BLA BLA \n\nAccelerate your team's performance by assigning tasks, communicating and tracking progress in one place. Use the Teamwork Timer to stay on top of your work.\n\nTeamwork has given us a one-stop solution that encompasses many of our project management needs. We've gone from using a range of tools to just the one and as a result, our team is more efficient and therefore more effective.\n\nTeamwork has given us a one-stop solution that encompasses many of our project management needs. We've gone from using a range of tools to just the one and as a result, our team is more efficient and therefore morejdjdnejdd effective.",
+            "announcement": "",
+            "isProjectAdmin": true,
+            "start-page": "projectoverview",
+            "notifyeveryone": false,
+            "boardData": {},
+            "announcementHTML": ""
+        }
