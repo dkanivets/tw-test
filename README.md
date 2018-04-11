@@ -7,11 +7,11 @@ To setup project simply clone repository and open **.xcworspace* file. All depen
 * I tried to follow *MVVM* architecture with usage of **ReactiveCocoa**
 * Persistency implemented with **Realm**, however you wouldn't find any migration and cleaning methods, only adding entities is implemented in this test project.
 * I've added simple tests to ensure that server responses are parsed
-* There is no login, API key is simply obtained from web and pasted to *NetworService* enum
+* There is no login, API key is simply obtained from web and pasted to *NetworkService* enum
 
 ### What this app can do:
 
-* get and show some details off all users Projects
+* get and show some details off all Projects user have access
 * get and show all Task Lists for Projects
 * get and show all Tasks in Task List
 * create multiple tasks 
