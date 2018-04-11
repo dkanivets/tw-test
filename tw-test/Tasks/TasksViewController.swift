@@ -12,9 +12,9 @@ import ARSLineProgress
 class TasksViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let viewModel: TasksViewModel
+    let viewModel: TasksViewModelProtocol
     
-    init (viewModel: TasksViewModel) {
+    init (viewModel: TasksViewModelProtocol) {
         self.viewModel = viewModel
         
         super.init(nibName: "TasksViewController", bundle: Bundle.main)
@@ -34,7 +34,7 @@ class TasksViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.viewModel.updateTasksAction.apply(self.viewModel.taskList.id).on(
+        self.viewModel.updateItemsAction.apply(self.viewModel.taskList.id).on(
         starting: {
                 ARSLineProgress.show()
         },

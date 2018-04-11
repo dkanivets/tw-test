@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectViewController" customModule="tw_test" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectDetailsViewController" customModule="tw_test" customModuleProvider="target">
             <connections>
                 <outlet property="defaultPrivacy" destination="JZF-7I-X7L" id="oYQ-98-Zzy"/>
                 <outlet property="logoImageView" destination="sAt-Oc-KJy" id="wyh-Af-vSg"/>

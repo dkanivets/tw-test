@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		18DBDCAAE1DED58A772DD1C4 /* Pods_tw_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463ABAF22EBD8FA16365A266 /* Pods_tw_test.framework */; };
-		C7D2DE9C207BD970004A39AA /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2DE9A207BD970004A39AA /* ProjectViewController.swift */; };
-		C7D2DE9D207BD970004A39AA /* ProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D2DE9B207BD970004A39AA /* ProjectViewController.xib */; };
+		C7D2DE9C207BD970004A39AA /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2DE9A207BD970004A39AA /* ProjectDetailsViewController.swift */; };
+		C7D2DE9D207BD970004A39AA /* ProjectDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D2DE9B207BD970004A39AA /* ProjectDetailsViewController.xib */; };
 		C7D2DE9F207BD991004A39AA /* ProjectDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2DE9E207BD991004A39AA /* ProjectDetailsViewModel.swift */; };
 		C7D2DEA3207BE17B004A39AA /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2DEA1207BE17B004A39AA /* TasksViewController.swift */; };
 		C7D2DEA4207BE17B004A39AA /* TasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D2DEA2207BE17B004A39AA /* TasksViewController.xib */; };
@@ -21,6 +21,8 @@
 		C7D2DEB1207BFABF004A39AA /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D2DEAF207BFABF004A39AA /* TaskTableViewCell.xib */; };
 		C7D2DEB4207C19EC004A39AA /* AbstractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2DEB3207C19EC004A39AA /* AbstractViewModel.swift */; };
 		C7D2DEB6207D7321004A39AA /* project.json in Resources */ = {isa = PBXBuildFile; fileRef = C7D2DEB5207D7321004A39AA /* project.json */; };
+		C7D2DEB8207DF7D2004A39AA /* taskList.json in Resources */ = {isa = PBXBuildFile; fileRef = C7D2DEB7207DF7D2004A39AA /* taskList.json */; };
+		C7D2DEBA207DF8F6004A39AA /* task.json in Resources */ = {isa = PBXBuildFile; fileRef = C7D2DEB9207DF8F6004A39AA /* task.json */; };
 		C7DEEE1F2077F78C006283B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DEEE1E2077F78C006283B4 /* AppDelegate.swift */; };
 		C7DEEE262077F78E006283B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DEEE252077F78E006283B4 /* Assets.xcassets */; };
 		C7DEEE292077F78E006283B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DEEE272077F78E006283B4 /* LaunchScreen.storyboard */; };
@@ -57,8 +59,8 @@
 		977B4516DA2F3868FBD91931 /* Pods-tw-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tw-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-tw-test/Pods-tw-test.release.xcconfig"; sourceTree = "<group>"; };
 		B9A9655B4C8EA6755E08D449 /* Pods-tw-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tw-testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tw-testTests/Pods-tw-testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C0217E769D430E3F8C94274E /* Pods-tw-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tw-testTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tw-testTests/Pods-tw-testTests.release.xcconfig"; sourceTree = "<group>"; };
-		C7D2DE9A207BD970004A39AA /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
-		C7D2DE9B207BD970004A39AA /* ProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectViewController.xib; sourceTree = "<group>"; };
+		C7D2DE9A207BD970004A39AA /* ProjectDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewController.swift; sourceTree = "<group>"; };
+		C7D2DE9B207BD970004A39AA /* ProjectDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectDetailsViewController.xib; sourceTree = "<group>"; };
 		C7D2DE9E207BD991004A39AA /* ProjectDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewModel.swift; sourceTree = "<group>"; };
 		C7D2DEA1207BE17B004A39AA /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		C7D2DEA2207BE17B004A39AA /* TasksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksViewController.xib; sourceTree = "<group>"; };
@@ -70,6 +72,8 @@
 		C7D2DEAF207BFABF004A39AA /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
 		C7D2DEB3207C19EC004A39AA /* AbstractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewModel.swift; sourceTree = "<group>"; };
 		C7D2DEB5207D7321004A39AA /* project.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = project.json; sourceTree = SOURCE_ROOT; };
+		C7D2DEB7207DF7D2004A39AA /* taskList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = taskList.json; sourceTree = SOURCE_ROOT; };
+		C7D2DEB9207DF8F6004A39AA /* task.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = task.json; sourceTree = SOURCE_ROOT; };
 		C7DEEE1B2077F78C006283B4 /* tw-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tw-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DEEE1E2077F78C006283B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7DEEE252077F78E006283B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,8 +139,8 @@
 		C7D2DE99207BD94A004A39AA /* ProjectDetails */ = {
 			isa = PBXGroup;
 			children = (
-				C7D2DE9A207BD970004A39AA /* ProjectViewController.swift */,
-				C7D2DE9B207BD970004A39AA /* ProjectViewController.xib */,
+				C7D2DE9A207BD970004A39AA /* ProjectDetailsViewController.swift */,
+				C7D2DE9B207BD970004A39AA /* ProjectDetailsViewController.xib */,
 				C7D2DE9E207BD991004A39AA /* ProjectDetailsViewModel.swift */,
 			);
 			path = ProjectDetails;
@@ -197,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				C7D2DEB5207D7321004A39AA /* project.json */,
+				C7D2DEB7207DF7D2004A39AA /* taskList.json */,
+				C7D2DEB9207DF8F6004A39AA /* task.json */,
 				C7DEEE1E2077F78C006283B4 /* AppDelegate.swift */,
 				C7DEEE4A207AAA2A006283B4 /* SwiftExtensions.swift */,
 				C7D2DEB3207C19EC004A39AA /* AbstractViewModel.swift */,
@@ -339,10 +345,12 @@
 			files = (
 				C7D2DEB6207D7321004A39AA /* project.json in Resources */,
 				C7DEEE292077F78E006283B4 /* LaunchScreen.storyboard in Resources */,
-				C7D2DE9D207BD970004A39AA /* ProjectViewController.xib in Resources */,
+				C7D2DE9D207BD970004A39AA /* ProjectDetailsViewController.xib in Resources */,
 				C7DEEE412078C76D006283B4 /* ProjectsViewController.xib in Resources */,
 				C7DEEE262077F78E006283B4 /* Assets.xcassets in Resources */,
 				C7D2DEB1207BFABF004A39AA /* TaskTableViewCell.xib in Resources */,
+				C7D2DEB8207DF7D2004A39AA /* taskList.json in Resources */,
+				C7D2DEBA207DF8F6004A39AA /* task.json in Resources */,
 				C7DEEE58207BA364006283B4 /* MainTableViewCell.xib in Resources */,
 				C7D2DEAB207BEF62004A39AA /* AddTasksViewController.xib in Resources */,
 				C7D2DEA4207BE17B004A39AA /* TasksViewController.xib in Resources */,
@@ -445,7 +453,7 @@
 				C7D2DEA3207BE17B004A39AA /* TasksViewController.swift in Sources */,
 				C7D2DEA6207BE186004A39AA /* TasksViewModel.swift in Sources */,
 				C7D2DEAA207BEF62004A39AA /* AddTasksViewController.swift in Sources */,
-				C7D2DE9C207BD970004A39AA /* ProjectViewController.swift in Sources */,
+				C7D2DE9C207BD970004A39AA /* ProjectDetailsViewController.swift in Sources */,
 				C7DEEE49207A96BC006283B4 /* ProjectsService.swift in Sources */,
 				C7DEEE402078C76D006283B4 /* ProjectsViewController.swift in Sources */,
 				C7DEEE44207910C4006283B4 /* NetworkService.swift in Sources */,

@@ -58,7 +58,7 @@ struct TasksService {
     }
 }
 
-private extension JSON {
+extension JSON {
     func taskListToStorage() -> RLMTasksList? {
         let taskList = RLMTasksList()
         

@@ -66,7 +66,6 @@ enum NetworkService {
                             observerResponse.send(value: (response: res, data: data))
                             observerResponse.sendCompleted()
                         }
-
                     }
             }
             

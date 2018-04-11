@@ -10,7 +10,13 @@ import Foundation
 import RealmSwift
 import ReactiveSwift
 
-class TasksViewModel {
+protocol TasksViewModelProtocol {
+    var taskList: RLMTasksList { get }
+    var items: [RLMTask] { get }
+    var updateItemsAction: Action<String, [RLMTask], NSError> { get }
+}
+
+class TasksViewModel: TasksViewModelProtocol {
     let taskList: RLMTasksList
     var items: [RLMTask] {
         let realm = try! Realm()
@@ -18,7 +24,7 @@ class TasksViewModel {
         
         return items
     }
-    var updateTasksAction = TasksService.pullTasksAction
+    var updateItemsAction = TasksService.pullTasksAction
  
     init (taskList: RLMTasksList) {
         self.taskList = taskList

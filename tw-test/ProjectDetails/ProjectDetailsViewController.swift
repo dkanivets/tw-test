@@ -9,7 +9,7 @@
 import UIKit
 import ARSLineProgress
 
-class ProjectViewController: UIViewController {
+class ProjectDetailsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logoImageView: UIImageView!
@@ -23,7 +23,7 @@ class ProjectViewController: UIViewController {
     init (viewModel: ProjectDetailsViewModelProtocol) {
         self.viewModel = viewModel
         
-        super.init(nibName: "ProjectViewController", bundle: Bundle.main)
+        super.init(nibName: "ProjectDetailsViewController", bundle: Bundle.main)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -55,14 +55,12 @@ class ProjectViewController: UIViewController {
     }
     
     private func updateUI() {
-        self.edgesForExtendedLayout = []
         self.title = viewModel.project.name
-        startDateLabel.text = self.dateFrom(string: viewModel.project.createdOn)
+        startDateLabel.text = "Started: \(self.dateFrom(string: viewModel.project.createdOn))"
         statusLabel.text = " " + viewModel.project.status + " "
         defaultPrivacy.text = " " + viewModel.project.defaultPrivacy + " "
         projectDescriptionLabel.text = self.viewModel.project.projectDescr
         logoImageView.sd_setImage(with: URL(string: self.viewModel.project.logo), placeholderImage: UIImage(named: "placeholder.png"))
-
     }
     
     private func dateFrom(string: String) -> String {
@@ -80,7 +78,7 @@ class ProjectViewController: UIViewController {
     }
 }
 
-extension ProjectViewController: UITableViewDataSource, UITableViewDelegate {
+extension ProjectDetailsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.items.count
     }

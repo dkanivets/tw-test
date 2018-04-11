@@ -18,10 +18,7 @@ class tw_testTests: XCTestCase {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
                 let projectSwiftyJSON = JSON(jsonResult)
-                guard let project = projectSwiftyJSON.projectToStorage() else {
-                    XCTFail()
-                    return
-                }
+                let project = projectSwiftyJSON.projectToStorage()
                 XCTAssertNotNil(project)
             } catch {
                 XCTFail()
@@ -29,4 +26,31 @@ class tw_testTests: XCTestCase {
         }
     }
     
+    func testTaskListToStorage_shouldMapJSONtoRLMTaskList() {
+        if let path = Bundle.main.path(forResource: "taskList", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                let taskListSwiftyJSON = JSON(jsonResult)
+                let taskList = taskListSwiftyJSON.taskListToStorage()
+                XCTAssertNotNil(taskList)
+            } catch {
+                XCTFail()
+            }
+        }
+    }
+    
+    func testTaskToStorage_shouldMapJSONtoRLMTask() {
+        if let path = Bundle.main.path(forResource: "task", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                let taskSwiftyJSON = JSON(jsonResult)
+                let task = taskSwiftyJSON.taskToStorage()
+                XCTAssertNotNil(task)
+            } catch {
+                XCTFail()
+            }
+        }
+    }
 }

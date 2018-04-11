@@ -8,6 +8,7 @@
 
 import ReactiveSwift
 
+//TODO
 protocol AbstractViewModelProtocol {
     associatedtype T
     var updateItemsAction: Action<Void, [T], NSError> { get }

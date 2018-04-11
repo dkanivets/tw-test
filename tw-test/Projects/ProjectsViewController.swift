@@ -79,7 +79,7 @@ extension ProjectsViewController: UITableViewDataSource, UITableViewDelegate {
         
         let project = viewModel.items[indexPath.row]
         let projectVM = ProjectDetailsViewModel(project: project)
-        let projectVC = ProjectViewController(viewModel: projectVM)
+        let projectVC = ProjectDetailsViewController(viewModel: projectVM)
         self.navigationController?.pushViewController(projectVC, animated: true)
     }
 }
